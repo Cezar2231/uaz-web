@@ -18,10 +18,12 @@ html {
 .m-1 { margin: 5px; }
 .mb-10 { margin-bottom: 10px; }
 .ml-5 {margin-left: 5px;}
+.ml-25{margin-left: 25px;}
 .mt-5 {	margin-top: 25px; }
 .mtl-5 { margin-top: 25px; margin-left: 25px; }
 
 body {
+	min-height: 100vh;
 	background-attachment: fixed;
 	background: linear-gradient(0deg, rgb(182, 233, 206), rgb(255, 255, 255));
 	margin: 0;
@@ -270,7 +272,7 @@ ul a {
 }
 
 .size {
-	font-size: 35px;
+	font-size: 25px;
 }
 
 .size2 {
@@ -294,4 +296,10 @@ ul a {
 
 
 	min-height: 100px;
+}
+
+.pic{
+	height: 300px;
+	max-width: 100%;
+	object-fit: fill;
 }
