@@ -56,6 +56,11 @@ a:link {
 	cursor: pointer;
 }
 
+ul{
+	list-style-type: none;
+	padding: 0;
+}
+
 /* Header */
 
 header {
@@ -132,54 +137,44 @@ header>div {
 }
 
 .main-nav .menu-item:hover {
-	opacity: 0.6;
+	opacity: 0.9;
 }
 
 /* Style the dropdown container */
 .menu-item.dropdown {
+	z-index: 1;
 	position: relative;
 	display: inline-block;
-	border-radius: 50px;
-
+	border-radius: 20px;
+	
 }
 
-/* Style the dropdown toggle button */
-.dropdown-toggle {
-	color: black;
-	font-size: 1.1rem;
-	border: none;
-	cursor: pointer;
-}
-
-/* Style the dropdown content (hidden by default) */
+/* hidden by default */
 .dropdown-content {
 	display: none;
 	position: absolute;
 	background-color: rgb(207, 232, 207);
 	border-radius: 20px;
-	min-width: 120px;
+	min-width: 300px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
 }
 
-/* Style the dropdown links */
 .dropdown-content a {
 	color: black;
-	padding: 12px 16px;
+	padding: 10px 16px;
 	text-decoration: none;
 	display: block;
 }
 
-/* Change color on hover */
 .dropdown-content a:hover {
 	background-color: rgb(201, 235, 217);
 
 }
 
-/* Show the dropdown menu on hover */
 .menu-item.dropdown:hover .dropdown-content {
 	display: block;
-	padding: 0.5rem;
+	padding: 1rem 0.7rem 0 0.7rem;
 }
 
 .flex-center {
@@ -239,4 +234,5 @@ header>div {
 @media only screen and (max-width: 1050px){
 	.remove{ display: none; }
 	.hidden{ display: flex; }
+	.dropdown-content{ right: -6rem;}
 }
