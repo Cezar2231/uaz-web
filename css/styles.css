@@ -4,16 +4,7 @@ html {
 	box-sizing: border-box;
 }
 
-/* shared classes */
-.text-left {
-	text-align: left;
-}
-
-.text-center {
-	text-align: center;
-}
-
-/* margins */
+/* Margins that override bootstrap */
 .m-5 { margin: 25px; }
 .m-1 { margin: 5px; }
 .mb-10 { margin-bottom: 10px; }
@@ -25,10 +16,11 @@ html {
 body {
 	min-height: 100vh;
 	background-attachment: fixed;
-	background: linear-gradient(0deg, rgb(182, 233, 206), rgb(255, 255, 255));
+	background: linear-gradient(90deg, rgba(116,180,81,1) 0%, rgba(58,105,41,0.7450629910167192) 100%);
 	margin: 0;
 	padding: 0;
 	font-family: 'Roboto', sans-serif;
+	overflow-x: hidden;
 }
 
 .container {
@@ -64,9 +56,10 @@ ul{
 /* Header */
 
 header {
-	background: linear-gradient(90deg, rgb(208, 225, 216), rgb(220, 241, 230));
+	background: linear-gradient(180deg, rgba(116,180,81,1) 0%, rgba(58,105,41,0.7450629910167192) 100%);
 	box-shadow: 0px 2px 25px rgba(213, 237, 206, 0.2);
 	display: flex;
+	position: sticky;
 }
 
 header>div {
@@ -121,7 +114,7 @@ header>div {
 }
 
 
-/* navigation */
+/* Navigation */
 
 .main-nav {
 	margin-left: auto;
@@ -140,13 +133,11 @@ header>div {
 	opacity: 0.9;
 }
 
-/* Style the dropdown container */
 .menu-item.dropdown {
 	z-index: 1;
 	position: relative;
 	display: inline-block;
 	border-radius: 20px;
-	
 }
 
 /* hidden by default */
@@ -177,6 +168,137 @@ header>div {
 	padding: 1rem 0.7rem 0 0.7rem;
 }
 
+/* Shopping cart */
+
+.shopping{
+	position: relative;
+	text-align: center;
+}
+
+.shopping span{
+	background: red;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	position: absolute;
+	top: -5px;
+	left: 80%;
+	font-size: 10px;
+	padding: 3px 8px;
+}
+
+.list{
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	margin-top: 2rem;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.list .item{
+	text-align: center;
+	background-color: #fff;
+	padding-top: 20px;
+}
+
+.list .item img{
+	width: 90%;
+	height: 250px;
+	object-fit: cover;
+}
+
+.list .item .title{
+	font-weight: 600;
+}
+
+.list .item .price{
+	margin: 10px;
+}
+
+.list .item button{
+	background-color: #1C1F25;
+	color: #fff;
+	width: 100%;
+	padding: 10px;
+}
+
+.card{
+	position: fixed;
+	top:0;
+	left: 100%;
+	width: 400px;
+	background-color: #453E3B;
+	height: 100vh;
+	transition: 0.5s;
+	z-index: 3;
+}
+.active .card{
+	left: calc(100% - 400px);
+}
+
+.card h1{
+	color: #E8BC0E;
+	font-weight: 100;
+	margin: 0;
+	padding: 0 20px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+}
+
+.card .checkOut{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.card .checkOut div{
+	background-color: #E8BC0E;
+	width: 100%;
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.card .checkOut div:nth-child(2){
+	background-color: #1C1F25;
+	color: #fff;
+}
+
+.listCard li{
+	display: grid;
+	grid-template-columns: 100px repeat(3, 1fr);
+	color: #fff;
+	row-gap: 10px;
+}
+
+.listCard li div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.listCard li img{
+	width: 90%;
+}
+
+.listCard li button{
+	background-color: #fff5;
+	border: none;
+}
+
+.listCard .count{
+	margin: 0 10px;
+}
+
 .flex-center {
 	display: flex;
 	flex-direction: column;
@@ -200,9 +322,10 @@ header>div {
 }
 
 .flex-catalog {
+	background: linear-gradient(360deg, rgba(116,180,81,1) 0%, rgba(58,105,41,0.7450629910167192) 100%);
+
 	display: flex;
 	width: 100%;
-	background: linear-gradient(360deg, rgb(208, 225, 216), rgb(220, 241, 230));
 	align-items: center;
 	text-align: center;
 	justify-content: space-around;
@@ -210,7 +333,9 @@ header>div {
 
 	min-height: 100px;
 }
-
+.crossed{
+	text-decoration: line-through;
+}
 .pic{
 	height: 300px;
 	max-width: 100%;
@@ -229,6 +354,11 @@ header>div {
 	.card-text{ font-size: 1rem;}
 	.flex-mobile-wrap{ flex-wrap: wrap; }
 	.hidden{ display: flex; }
+	.card{ width: 300px;}
+	.active .card{
+    left: calc(100% - 300px);
+}
+	
 }
 
 @media only screen and (max-width: 1050px){
