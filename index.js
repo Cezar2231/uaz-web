@@ -59,7 +59,7 @@ function initApp(){
         newDiv.innerHTML = `
             <img src="images/${value.image}">
             <div class="title">${value.name}</div>
-            <div class="price"><p class="card-text">${value.price.toLocaleString()}лв. <span class="crossed">80,00 лв.</span></p></div>
+            <div class="price"><p class="card-text">${value.price.toLocaleString()}лв.</p></div>
             <button onclick="addToCard(${key})">Добави в количката</button>`;
         list.appendChild(newDiv);
     })

@@ -1,0 +1,34 @@
+/*
+	Back 2 Top | Author: Colin J.D. Stewart
+*/
+
+html { scroll-behavior:smooth; }
+
+.b2t_btn {
+	--b2t_progress:0%;
+	display:none;
+	align-items:center;
+	justify-content:center;
+	width:48px;
+	height:48px; 	
+	position:fixed; 
+	bottom:30px;
+	right:30px; 	
+	z-index:99;
+	border-radius:50%;
+	border: solid 1px #fff;
+	color:white;
+	cursor:pointer;
+
+	background: 
+		radial-gradient(closest-side, #504b40 90%, transparent 90% 100%),
+		conic-gradient(#ddb357 var(--b2t_progress), rgba(0,255,0,.2) 0%);
+}
+
+.b2t_btn:hover {
+	color:#ddb357;
+
+	background:
+		radial-gradient(closest-side, #5c5035 90%, transparent 90% 100%),
+		conic-gradient(#ddb357 var(--b2t_progress), rgba(0,255,0,.2) 0%);	
+}
