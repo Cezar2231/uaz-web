@@ -23,7 +23,7 @@ body {
 	overflow-x: hidden;
 }
 
-.container-header {
+.container {
 	display: flex;
 	margin: 10px auto;
 	padding: 0 10px 0 10px;
