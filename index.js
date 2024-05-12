@@ -58,21 +58,29 @@ function initApp(){
         newDiv.classList.add('item');
         newDiv.innerHTML = `
             <img src="images/${value.image}">
-            <div class="title">${value.name}</div>
-            <div class="price"><p class="card-text">${value.price.toLocaleString()}лв.</p></div>
-            <button onclick="addToCard(${key})">Добави в количката</button>`;
+            <div class="title text-start ms-3">${value.name}</div>
+            <hr>
+            <div class="price text-start ms-3"><p class="card-text">${value.price.toLocaleString()}лв.</p></div>
+            <button id="addButton_${key}" class="btn" onclick="addToCard(${key})">Добави в количката</button>`;
         list.appendChild(newDiv);
     })
 }
+
 initApp();
 function addToCard(key){
     if(listCards[key] == null){
         // copy product form list to list card
         listCards[key] = JSON.parse(JSON.stringify(products[key]));
         listCards[key].quantity = 1;
+        let addButton = document.getElementById(`addButton_${key}`);
+        if (addButton) {
+            addButton.textContent = 'Добавено в количката';
+        }
     }
     reloadCard();
+    
 }
+
 function reloadCard(){
     listCard.innerHTML = '';
     let count = 0;
@@ -85,7 +93,7 @@ function reloadCard(){
             newDiv.style.zIndex = '999';
             newDiv.innerHTML = `
                 <div><img src="images/${value.image}"/></div>
-                <div>${value.name}</div>
+                <div class="sm-words">${value.name}</div>
                 <div>${value.price.toLocaleString()}лв.</div>
                 <div>
                     <button class="px-2 " onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
@@ -101,9 +109,14 @@ function reloadCard(){
 function changeQuantity(key, quantity){
     if(quantity == 0){
         delete listCards[key];
+        let addButton = document.getElementById(`addButton_${key}`);
+        if (addButton) {
+            addButton.textContent = 'Добави в количката';
+        }
     }else{
         listCards[key].quantity = quantity;
         listCards[key].price = quantity * products[key].price;
     }
     reloadCard();
 }
+

@@ -134,7 +134,6 @@ header>div {
 }
 
 .menu-item.dropdown {
-	
 	position: relative;
 	display: inline-block;
 	border-radius: 20px;
@@ -143,7 +142,7 @@ header>div {
 
 /* hidden by default */
 .dropdown-content {
-	z-index: 3;
+	z-index: 4;
 	display: none;
 	position: absolute;
 	background-color: rgb(207, 232, 207);
@@ -210,7 +209,7 @@ header>div {
 
 .list .item img{
 	width: 90%;
-	height: 250px;
+	height: 200px;
 	object-fit: cover;
 }
 
@@ -303,6 +302,10 @@ header>div {
 	margin: 0 10px;
 }
 
+.sm-words{
+	font-size: 12px;
+}
+
 .flex-center {
 	display: flex;
 	flex-direction: column;
@@ -353,6 +356,16 @@ header>div {
 }
 .hidden{display: none;}
 
+.btn{
+	transition: all 0.6s;
+}
+
+.btn:hover{
+	opacity: 0.8;
+}
+
+
+
 @media only screen and (max-width: 660px){
 	.remove{ display: none; }
 	.site-heading{ font-size: 1rem; }
@@ -363,7 +376,7 @@ header>div {
 	.card-text{ font-size: 1rem;}
 	.flex-mobile-wrap{ flex-wrap: wrap; }
 	.hidden{ display: flex; }
-	.card{ width: 300px;}
+	.card{ width: 300px; height:95vh}
 	.active .card{
     left: calc(100% - 300px);
 }
