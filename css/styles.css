@@ -126,7 +126,6 @@ header>div {
 	position: relative;
 	margin-left: 2rem;
 	font-size: 1rem;
-	padding: 0.2rem;
 }
 
 .main-nav .menu-item:hover {
@@ -173,12 +172,11 @@ header>div {
 
 /* Shopping cart */
 
-.shopping{
+.icon-cart{
 	position: relative;
-	text-align: center;
 }
 
-.shopping span{
+.icon-cart span{
 	background: red;
 	border-radius: 50%;
 	display: flex;
@@ -192,7 +190,13 @@ header>div {
 	padding: 3px 8px;
 }
 
-.list{
+.listProduct .item img{
+	height: 200px;
+	text-align: center;
+	width: 100%;
+}
+
+.listProduct{
 	display: flex;
 	flex-direction: row;
 	gap: 1rem;
@@ -201,105 +205,114 @@ header>div {
 	flex-wrap: wrap;
 }
 
-.list .item{
-	text-align: center;
-	background-color: #fff;
-	padding-top: 20px;
+.listProduct .item{
+	background-color: #EEEEE6;
+	padding: 20px;
+	font-weight: 500;
+	font-size: large;
+	border-radius: 5px;
 }
 
-.list .item img{
-	width: 90%;
-	height: 200px;
-	object-fit: cover;
+.listProduct .item button{
+	background-color: #353432;
+	color: #eee;
+	border: none;
+	padding: 5px 10px;
+	margin-top: 10px;
+	border-radius: 20px;
 }
 
-.list .item .title{
-	font-weight: 600;
-}
-
-.list .item .price{
-	margin: 10px;
-}
-
-.list .item button{
-	background-color: #1C1F25;
-	color: #fff;
-	width: 100%;
-	padding: 10px;
-}
-
-.card{
-	position: fixed;
-	top:0;
-	left: 100%;
+/* Cart */
+.cartTab{
 	width: 400px;
-	background-color: #453E3B;
-	height: 100vh;
-	transition: 0.5s;
-	z-index: 3;
-}
-.active .card{
-	left: calc(100% - 400px);
-}
-
-.card h1{
-	color: #E8BC0E;
-	font-weight: 100;
-	margin: 0;
-	padding: 0 20px;
-	height: 80px;
-	display: flex;
-	align-items: center;
-}
-
-.card .checkOut{
-	position: absolute;
+	background-color: #353432;
+	color: #eee;
+	position: fixed;
+	top: 0;
+	right: -400px;
 	bottom: 0;
-	width: 100%;
+	display: grid;
+	grid-template-rows: 70px 1fr 70px;
+	transition: .5s;
+}
+
+body.showCart .cartTab{
+	right: 0;
+}
+
+.cartTab h1{
+	padding: 20px;
+	margin: 0;
+	font-weight: 300;
+}
+
+.cartTab .btn{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 }
 
-.card .checkOut div{
+.cartTab button{
 	background-color: #E8BC0E;
-	width: 100%;
-	height: 70px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-weight: bold;
+	border: none;
+	font-weight: 500;
 	cursor: pointer;
 }
 
-.card .checkOut div:nth-child(2){
-	background-color: #1C1F25;
-	color: #fff;
+.cartTab .close{
+	background-color: #eee;
 }
 
-.listCard li{
+.listCart .item img{
+	width: 100%;
+}
+
+.listCart .item{
 	display: grid;
-	grid-template-columns: 100px repeat(3, 1fr);
-	color: #fff;
-	row-gap: 10px;
-}
-
-.listCard li div{
-	display: flex;
-	justify-content: center;
+	grid-template-columns: 70px 150px 50px 1fr;
+	gap: 10px;
+	text-align: center;
 	align-items: center;
 }
 
-.listCard li img{
-	width: 90%;
+.listCart .quantity span{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background-color: #eee;
+	border-radius: 50%;
+	color: #555;
+	cursor: pointer;
 }
 
-.listCard li button{
-	background-color: #fff5;
-	border: none;
+.listCart .quantity span:nth-child(2){
+	background-color: transparent;
+	color: #eee;
+	cursor: auto;
 }
 
-.listCard .count{
-	margin: 0 10px;
+.listCart .item:nth-child(even){
+	background-color: #eee1;
+}
+
+.listCart{
+	overflow: auto;
+}
+
+.listCart::-webkit-scrollbar{
+	width: 0;
+}
+
+@media only screen and (max-width: 992px) {
+	.listProduct{
+			grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* mobile */
+@media only screen and (max-width: 768px) {
+	.listProduct{
+			grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 .sm-words{
@@ -376,11 +389,7 @@ header>div {
 	.card-text{ font-size: 1rem;}
 	.flex-mobile-wrap{ flex-wrap: wrap; }
 	.hidden{ display: flex; }
-	.card{ width: 300px; height:95vh}
-	.active .card{
-    left: calc(100% - 300px);
-}
-	
+	.cartTab{ width: 350px; }
 }
 
 @media only screen and (max-width: 1050px){

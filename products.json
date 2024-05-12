@@ -1,0 +1,39 @@
+[
+  {
+      "id": 1,
+      "name": "Слушалки Plantronics Audio 628 USB",
+      "image": "images/el.jpg",
+      "price": 60
+  },
+  {
+    "id": 2,
+    "name": "Слушалки Plantronics Audio 628 USB",
+    "image": "images/el.jpg",
+    "price": 60
+  },
+  {
+      "id": 3,
+      "name": "Слушалки Plantronics Audio 628 USB",
+      "image": "images/el.jpg",
+      "price": 60
+  },
+  {
+    "id": 4,
+    "name": "Слушалки Plantronics Audio 628 USB",
+    "image": "images/el.jpg",
+    "price": 60
+  },
+  
+  {
+      "id": 5,
+      "name": "Слушалки Plantronics Audio 628 USB",
+      "image": "images/el.jpg",
+      "price": 60
+  },
+  {
+    "id": 1,
+    "name": "Слушалки Plantronics Audio 628 USB",
+    "image": "images/el.jpg",
+    "price": 60
+  }
+]
