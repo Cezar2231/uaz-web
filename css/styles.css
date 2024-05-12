@@ -148,10 +148,15 @@ header>div {
 	border-radius: 20px;
 	min-width: 300px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	right: -7rem;
 }
 
 .negative{
 	z-index: -1;
+}
+
+.ind{
+	z-index: 10;
 }
 
 .dropdown-content a {

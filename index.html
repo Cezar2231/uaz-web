@@ -30,10 +30,12 @@
   </div>
 
   <div class="justify-content-around p-1 bg-black hidden ">
+    <!--
     <a class="text-white font-weight-bold ms-3 fs-5" href="index.html">
       <i class="fa-solid fa-circle-user fs-6 me-2"></i>
         Профил
     </a>
+    -->
     <span class="text-white font-weight-bold fs-5"><i class="fa-solid fa-headphones fs-5 me-2"></i>089 444 4444</span>
   </div>
 
@@ -50,11 +52,12 @@
         </a>
       </div>
     </div>
+
     <div class="middle-container remove">
-      <i class="fa-solid fa-phone size2"></i>
+      <i class="fa-solid fa-phone fs-4"></i>
       <h6 class="ml-5">+359 876 5672 <br><span class="small-word fw-bold">свържете се с нас</span></h6>
 
-      <i class="fa-solid fa-truck size2"></i>
+      <i class="fa-solid fa-truck fs-4 ms-5"></i>
       <h6 class="ml-5">Бърза доставка <br><span class="small-word fw-bold">в цяла България</span></h6>
     </div>
 
@@ -82,7 +85,7 @@
             </ul>
           </div>
         </div>
-
+        <!--
         <div class="menu-item remove">
           <div class="flex-center">
             <a href="#">
@@ -95,14 +98,13 @@
             </a>
           </div>
         </div>
-
+        -->
         <div class="menu-item">
           <div class="flex-center">
             <a href="#">
               <div class="icon-cart">
                 <i class="fa-solid fa-cart-shopping size"></i>
                 <span>0</span>
-            </div>
               </div>
               <div class="text">
                 <span>Кошница</span>
@@ -110,21 +112,21 @@
             </a>
           </div>
         </div>
+
       </div>
     </nav>
-  </div>
-</header>
+  </header>
 
-<div class="cartTab">
-  <h1>Количка</h1>
-  <div class="listCart">
-      
-  </div>
-  <div class="btn">
+  <div class="cartTab">
+    <h1>Количка</h1>
+    <div class="listCart">
+      <!-- Cart items added with js -->  
+    </div>
+    <div class="btn">
       <button class="close">Затвори</button>
       <button class="checkOut ms-1">Поръчай</button>
+    </div>
   </div>
-</div>
 
   <div class="flex-catalog">
 
@@ -138,7 +140,6 @@
         </div>
       </a>
     </div>
-
 
     <div class="flex-catalog-child">
       <a href="#">
@@ -162,7 +163,6 @@
       </a>
     </div>
 
-
     <div class="flex-catalog-child">
       <a href="#">
         <div class="icon">
@@ -179,25 +179,25 @@
   <!-- Carousel section -->
 
   <section>
-    <div id="carouselExampleAutoplaying" class="carousel slide remove negative" data-bs-ride="carousel">
+    <div id="carouselExampleAutoplaying" class="carousel slide remove" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
+        <div class="carousel-item active negative">
           <a href="#">
             <img src="images/sl-promo04-1920x450.png" class="d-block w-100 pic" alt="...">
           </a>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item negative">
           <a href="#">
             <img src="images/slide2302-1920x450h.png" class="d-block w-100 pic" alt="...">
           </a>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item negative">
           <a href="#">
             <img src="images/banner-site-audiosistemi (1)-1920x450h.png" class="d-block w-100 pic" alt="...">
           </a>
         </div>
       </div>
-      <button class="carousel-control-prev text-dark static" type="button" data-bs-target="#carouselExampleAutoplaying"
+      <button class="carousel-control-prev text-dark" type="button" data-bs-target="#carouselExampleAutoplaying"
         data-bs-slide="prev">
         <span class="carousel-control-prev-icon " aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -215,100 +215,10 @@
   <!-- Items section -->
 
   <div class="listProduct">
+    <!-- Adding items using js -->
   </div>
-  <!--
 
-  <section>
-    <div class="d-flex flex-row gap-2 mt-5 justify-content-center flex-mobile-wrap">
-      <div class="card" style="width: 17.2rem;">
-        <img src="images/el.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title m-0">Слушалки Plantronics Audio 628 USB</h5>
-          <hr>
-          <p class="card-text">26,99 лв. <del>80,00 лв.</del></p>
-          <a href="#" class="btn btn-primary">Купи</a>
-        </div>
-      </div>
-      
-      <div class="card" style="width: 17.2rem;">
-        <img src="images/el.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title m-0">Слушалки Plantronics Audio 628 USB</h5>
-          <hr>
-          <p class="card-text">26,99 лв. <del>80,00 лв.</del></p>
-          <a href="#" class="btn btn-primary">Купи</a>
-        </div>
-      </div>
-      
-      <div class="card" style="width: 17.2rem;">
-        <img src="images/el.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title m-0">Слушалки Plantronics Audio 628 USB</h5>
-          <hr>
-          <p class="card-text">26,99 лв. <del>80,00 лв.</del></p>
-          <a href="#" class="btn btn-primary">Купи</a>
-        </div>
-      </div>
-      
-      <div class="card" style="width: 17.2rem;">
-        <img src="images/el.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title m-0">Слушалки Plantronics Audio 628 USB</h5>
-          <hr>
-          <p class="card-text">26,99 лв. <del>80,00 лв.</del></p>
-          <a href="#" class="btn btn-primary">Купи</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <section>
-    <div class="d-flex flex-row gap-2 mt-2 justify-content-center flex-mobile-wrap">
-      <div class="card" style="width: 17.2rem;">
-        <img src="images/el.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title m-0">Слушалки Plantronics Audio 628 USB</h5>
-          <hr>
-          <p class="card-text">26,99 лв. <del>80,00 лв.</del></p>
-          <a href="#" class="btn btn-primary">Купи</a>
-        </div>
-      </div>
-      
-      <div class="card" style="width: 17.2rem;">
-        <img src="images/el.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title m-0">Слушалки Plantronics Audio 628 USB</h5>
-          <hr>
-          <p class="card-text">26,99 лв. <del>80,00 лв.</del></p>
-          <a href="#" class="btn btn-primary">Купи</a>
-        </div>
-      </div>
-      
-      <div class="card" style="width: 17.2rem;">
-        <img src="images/el.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title m-0">Слушалки Plantronics Audio 628 USB</h5>
-          <hr>
-          <p class="card-text">26,99 лв. <del>80,00 лв.</del></p>
-          <a href="#" class="btn btn-primary">Купи</a>
-        </div>
-      </div>
-      
-      <div class="card" style="width: 17.2rem;">
-        <img src="images/el.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title m-0">Слушалки Plantronics Audio 628 USB</h5>
-          <hr>
-          <p class="card-text">26,99 лв. <del>80,00 лв.</del></p>
-          <a href="#" class="btn btn-primary">Купи</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  
--->
-  <!-- End of items section -->
-
+  <!-- End of Items section -->
 
   <!-- Footer -->
   <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
@@ -329,7 +239,7 @@
           <!-- Grid column -->
 
           <!-- Grid column -->
-          <div class="col-md-2 col-lg-3 col-xl-2 mx-auto mb-2">
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold">ЛИНКОВЕ</h6>
             <hr class="mb-2 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
@@ -353,7 +263,7 @@
           <!-- Grid column -->
 
           <!-- Grid column -->
-          <div class="col-md-3 col-lg-3 col-xl-2 mx-auto mb-2">
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-2">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold">КЛИЕНТСКИ ПОРТАЛ</h6>
             <hr class="mb-2 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
