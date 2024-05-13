@@ -29,7 +29,7 @@ closeCart.addEventListener('click', () => {
                 <div class="title text-start ms-3">${product.name}</div>
                 <hr class="m-1">
                 <div class="price text-start ms-3">${product.price} лв.</div>
-                <button class="addCart btn">Добави в количката</button>`;
+                <button class="addCart btn btnh">Добави в количката</button>`;
                 listProductHTML.appendChild(newProduct);
             });
         }

@@ -239,6 +239,7 @@ header>div {
 	display: grid;
 	grid-template-rows: 70px 1fr 70px;
 	transition: .5s;
+	z-index: 2;
 }
 
 body.showCart .cartTab{
@@ -378,7 +379,7 @@ body.showCart .cartTab{
 	transition: all 0.6s;
 }
 
-.btn:hover{
+.btnh:hover{
 	opacity: 0.8;
 }
 
