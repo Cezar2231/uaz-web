@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Stoil Georgiev & Stoicho Todorov">
+        <meta name="description" content="Палетни стоки, покупко-продажба на стоки.">
+        <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+        <title>Paletnistoki.bg онлайн магазин за стоки.</title>
+      
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <script src="https://kit.fontawesome.com/abeb6fec91.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+          crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="vendor/b2t/css/b2t.css">
+      
+        <link rel="stylesheet" href="css/styles.css">
+      </head>
 <body>
     
 <div class="container">
@@ -17,15 +30,7 @@
             <h1>Продукти в количката</h1>
             <div class="list">
 
-                <div class="item">
-                    <img src="images/1.webp">
-                    <div class="info">
-                        <div class="name">PRODUCT 1</div>
-                        <div class="price">$22/1 product</div>
-                    </div>
-                    <div class="quantity">5</div>
-                    <div class="returnPrice">$433.3</div>
-                </div>
+            <!-- added with js -->
 
             </div>
         </div>
@@ -35,26 +40,27 @@
             <h1>Поръчай</h1>
 
             <div class="form">
-                <div class="group">
-                    <label for="name">Име / Фамилия</label>
-                    <input type="text" name="name" id="name">
+                <div class="group text-start">
+                    <label for="name">Име / Фамилия <span class="text-danger">*</span></label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+    
+                <div class="group text-start">
+                    <label for="phone">Телефон <span class="text-danger">*</span></label>
+                    <input type="text" name="phone" id="phone" required>
+                </div>
+    
+                <div class="group text-start">
+                    <label for="address">Address <span class="text-danger">*</span></label>
+                    <input type="text" name="address" id="address" required>
                 </div>
     
                 <div class="group">
-                    <label for="phone">Телефон</label>
-                    <input type="text" name="phone" id="phone">
-                </div>
-    
-                <div class="group">
-                    <label for="address">Address</label>
-                    <input type="text" name="address" id="address">
-                </div>
-    
-                <div class="group">
-                    <label for="country">Country</label>
+                    <label for="country">Офис на</label>
                     <select name="country" id="country">
-                        <option value="">Choose..</option>
-                        <option value="">Bulgaria</option>
+                        <option value="">Избери..</option>
+                        <option value="">Еконт</option>
+                        <option value="">Спииди</option>
                     </select>
                 </div>
     
