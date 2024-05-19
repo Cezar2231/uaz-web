@@ -41,5 +41,26 @@
     "image": "images/el.jpg",
     "price": 60,
     "category": "Air Fryers"
+  },
+  {
+    "id": 7,
+    "name": "Слушалки Plantronics Audio 628 USB",
+    "image": "images/el.jpg",
+    "price": 60,
+    "category": "Air Fryers"
+  },
+  {
+    "id": 8,
+    "name": "Слушалки Plantronics Audio 628 USB",
+    "image": "images/el.jpg",
+    "price": 60,
+    "category": "Air Fryers"
+  },
+  {
+    "id": 9,
+    "name": "Слушалки Plantronics Audio 628 USB",
+    "image": "images/el.jpg",
+    "price": 60,
+    "category": "Air Fryers"
   }
 ]

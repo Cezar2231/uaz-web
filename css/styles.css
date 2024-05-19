@@ -419,11 +419,10 @@ header .totalQuantity{
 }
 
 .item button {
-	background-color: #007bff;
-	color: white;
+	color: black;
 	border: none;
-	padding: 10px;
-	border-radius: 4px;
+	border-radius: 10px;
+	padding: 0 7px;
 	cursor: pointer;
 	transition: background-color 0.3s;
 }
@@ -465,17 +464,13 @@ header .totalQuantity{
 	align-items: center;
 	text-align: center;
 	justify-content: space-around;
-
-
 	min-height: 100px;
 }
-.crossed{
-	text-decoration: line-through;
-}
+
 .pic{
 	height: 300px;
 	max-width: 100%;
-	object-fit: cover;
+	object-fit:fill;
 }
 .line {
 	padding-left : 8vw;
@@ -503,10 +498,9 @@ header .totalQuantity{
 	top: 5px; 
 	right: -170px; 
 	border-radius: 50%;
-	background: rgb(254, 246, 246);
+	background: rgb(215, 88, 88);
 	color: black;
 	border: none;
-	padding: 5px 10px;
 	cursor: pointer;
 }
 
