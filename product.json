@@ -3,37 +3,43 @@
       "id": 1,
       "name": "Слушалки Plantronics Audio 628 USB",
       "image": "images/el.jpg",
-      "price": 60
+      "price": 60,
+      "category": "Microwaves"
   },
   {
     "id": 2,
     "name": "Слушалки Plantronics Audio 628 USB",
     "image": "images/el.jpg",
-    "price": 60
+    "price": 60,
+    "category": "Microwaves"
   },
   {
       "id": 3,
       "name": "Слушалки Plantronics Audio 628 USB",
       "image": "images/el.jpg",
-      "price": 60
+      "price": 60,
+      "category": "Microwaves"
   },
   {
     "id": 4,
     "name": "Слушалки Plantronics Audio 628 USB",
     "image": "images/el.jpg",
-    "price": 60
+    "price": 60,
+    "category": "Air Fryers"
   },
   
   {
       "id": 5,
       "name": "Слушалки Plantronics Audio 628 USB",
       "image": "images/el.jpg",
-      "price": 60
+      "price": 60,
+      "category": "Air Fryers"
   },
   {
     "id": 6,
     "name": "Слушалки Plantronics Audio 628 USB",
     "image": "images/el.jpg",
-    "price": 60
+    "price": 60,
+    "category": "Air Fryers"
   }
 ]
