@@ -21,7 +21,10 @@ body {
 	padding: 0;
 	font-family: 'Roboto', sans-serif;
 	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
 }
+
 
 .container {
 	display: flex;
@@ -60,6 +63,9 @@ header {
 	box-shadow: 0px 2px 25px rgba(213, 237, 206, 0.6);
 	display: flex;
 	position: sticky;
+  top: 0;
+	width: 100%;
+	z-index: 1000;
 }
 
 header>div {
@@ -177,13 +183,15 @@ header>div {
 	z-index: 1;
 }
 
-.listProduct{
-	display: flex;
-	flex-direction: row;
-	gap: 1rem;
+.listProduct {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid columns */
+	gap: 1rem; /* Space between items */
 	margin-top: 2rem;
-	justify-content: center;
-	flex-wrap: wrap;
+	justify-content: center; /* Center the grid container */
+	max-width: 1200px; /* Set a max-width to create space on the sides */
+	margin-left: auto; /* Center the grid container horizontally */
+	margin-right: auto; /* Center the grid container horizontally */
 }
 
 .listProduct .item{
@@ -507,6 +515,10 @@ header .totalQuantity{
 .removeBtn:hover {
 	opacity: 0.8;
 	color:#6a6fc9;
+}
+
+footer{
+	margin-top: auto;
 }
 
 @media only screen and (max-width: 660px){

@@ -97,16 +97,16 @@
             </a>
           </div>
         </div>
-                -->
+        -->
         <div class="menu-item">
           <div class="flex-center">
-            <a href="#">
-              <div class="icon-cart">
+            <a>
+              <div class="iconCart">
                 <i class="fa-solid fa-cart-shopping size"></i>
-                <span>0</span>
+                <span class="totalQuantity">0</span>
               </div>
               <div class="text">
-                <span>Кошница</span>
+                <span>Количка</span>
               </div>
             </a>
           </div>
@@ -116,14 +116,18 @@
     </nav>
   </header>
 
-  <div class="cartTab">
-    <h1>Количка</h1>
+  <div class="cart">
+    <h2>Количка</h2>
     <div class="listCart">
       <!-- Cart items added with js -->  
     </div>
-    <div class="btn">
-      <button class="close">Затвори</button>
-      <button class="checkOut ms-1">Поръчай</button>
+    <div class="buttons">
+      <div class="close btnh">
+          Затвори
+      </div>
+      <div class="checkout btnh">
+          <a class="checkout-text" href="checkout.html">Поръчай</a>
+      </div>
     </div>
   </div>
 
@@ -501,7 +505,7 @@
   <!-- Footer -->
 
 
-  <script src="index.js"></script>
+  <script src="app.js"></script>
   <script src="vendor/b2t/js/b2t.js"></script>
 </body>
 
