@@ -65,7 +65,7 @@ header {
 	position: sticky;
   top: 0;
 	width: 100%;
-	z-index: 1000;
+	z-index: 3;
 }
 
 header>div {
@@ -356,7 +356,7 @@ header .totalQuantity{
 }
 
 .checkoutLayout .form h1,
-.checkoutLayout .form .group:nth-child(-n+3){
+.checkoutLayout .form .group:nth-child(-n+4){
 	grid-column-start: 1;
 	grid-column-end: 3;
 }

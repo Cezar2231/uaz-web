@@ -65,23 +65,23 @@
   },
   {
     "id": 10,
-    "name": "Слушалки Plantronics Audio 628 USB",
+    "name": "Top offer 1",
     "image": "images/el.jpg",
     "price": 60,
-    "category": "Top offer"
+    "category": "Top Offer"
   },
   {
     "id": 11,
-    "name": "Слушалки Plantronics Audio 628 USB",
+    "name": "Top offer 2",
     "image": "images/el.jpg",
     "price": 60,
-    "category": "Top offer"
+    "category": "Top Offer"
   },
   {
     "id": 12,
-    "name": "Слушалки Plantronics Audio 628 USB",
+    "name": "Top offer 3",
     "image": "images/el.jpg",
     "price": 60,
-    "category": "Top offer"
+    "category": "Top Offer"
   }
 ]

@@ -72,29 +72,38 @@ checkCart();
 addCartToHTML();
 
 document.addEventListener('DOMContentLoaded', function() {
-    var btn = document.querySelector('.buttonCheckout');
+    let btn = document.querySelector('.buttonCheckout');
     btn.addEventListener('click', function(e){
         e.preventDefault();
         
-        var name = document.getElementById('name').value;
-        var phone = document.getElementById('phone').value;
-        var address = document.getElementById('address').value;
-        var country = document.getElementById('country').value;
-        var city = document.getElementById('city').value;
+        let name = document.getElementById('name').value;
+        let phone = document.getElementById('phone').value;
+        let address = document.getElementById('address').value;
+        let message = document.getElementById('message').value;
+        let office = document.getElementById('office').value;
+        let city = document.getElementById('city').value;
         
-        var body = '<strong>Contact Information:</strong><br/> Name: ' + name + '<br/> Phone: ' + phone + '<br/> Address: ' + address + '<br/> Country: ' + country + '<br/> City: ' + city;
+        let body = '<strong>Contact Information:</strong><br/> Имена: ' + name + '<br/> Телефон: ' + phone + '<br/> Адрес на доставка: ' + 
+                    address + '<br/> Съобщение: ' + message + '<br/> Офис: ' + office +  '<br/> Град: ' + city;
 
 
         body += '<br/><br/><strong>Cart Information:</strong>' + cartBody;
 
         Email.send({
             SecureToken : "7aef9683-a83b-4269-a214-0025887c76a8",
-            To : 'sisko.10@abv.bg',
+            To : 'marty100@abv.bg',
             From : 'sisko.10@abv.bg',
-            Subject : "This is the subject",
+            Subject : "Нова поръчка",
             Body : body
           }).then(
           message => alert(message)
           );
+
+          name.value = '';
+          phone.value = '';
+          address = '';
+          office = '';
+          city = '';
           })
+
 });
