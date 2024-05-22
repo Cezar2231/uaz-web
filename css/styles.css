@@ -531,7 +531,7 @@ footer{
 	.card-text{ font-size: 1rem;}
 	.flex-mobile-wrap{ flex-wrap: wrap; }
 	.hidden{ display: flex; }
-	.cart{ height: 98vh; }
+	.cart{ height: 96vh; }
 	.returnCart .list .item .name { font-size: 14px; }
 	.returnCart .list .item {gap: 15px; }
 }

@@ -30,7 +30,6 @@ function addCartToHTML() {
     let totalQuantity = 0;
     let totalPrice = 0;
 
-
     // if has product in Cart
     if (listCart) {
         listCart.forEach((product, index) => {
@@ -49,8 +48,8 @@ function addCartToHTML() {
                     <div class="quantity fs-5">${product.quantity}</div>
                     <div class="returnPrice">${product.price * product.quantity} лв.</div>`;
                 listCartHTML.appendChild(newCart);
-                totalQuantity = totalQuantity + product.quantity;
-                totalPrice = totalPrice + (product.price * product.quantity);
+                totalQuantity += product.quantity;
+                totalPrice += (product.price * product.quantity);
                 cartBody += '<br/><strong>Product:</strong> ' + product.name + '<br/> <strong>Price:</strong> ' + product.price + ' лв.' + '<br/> <strong>Quantity:</strong> ' + product.quantity;
             }
         });
@@ -71,39 +70,44 @@ function addCartToHTML() {
 checkCart();
 addCartToHTML();
 
-document.addEventListener('DOMContentLoaded', function() {
-    let btn = document.querySelector('.buttonCheckout');
-    btn.addEventListener('click', function(e){
-        e.preventDefault();
-        
-        let name = document.getElementById('name').value;
-        let phone = document.getElementById('phone').value;
-        let address = document.getElementById('address').value;
-        let message = document.getElementById('message').value;
-        let office = document.getElementById('office').value;
-        let city = document.getElementById('city').value;
-        
-        let body = '<strong>Contact Information:</strong><br/> Имена: ' + name + '<br/> Телефон: ' + phone + '<br/> Адрес на доставка: ' + 
-                    address + '<br/> Съобщение: ' + message + '<br/> Офис: ' + office +  '<br/> Град: ' + city;
+let btn = document.querySelector('.buttonCheckout');
+btn.addEventListener('click', function (e) {
+    e.preventDefault();
 
+    let name = document.getElementById('name').value;
+    let phone = document.getElementById('phone').value;
+    let address = document.getElementById('address').value;
+    let message = document.getElementById('message').value;
+    let office = document.getElementById('office').value;
+    let city = document.getElementById('city').value;
 
-        body += '<br/><br/><strong>Cart Information:</strong>' + cartBody;
+    let body = '<strong>Contact Information:</strong><br/> Имена: ' + name + '<br/> Телефон: ' + phone + '<br/> Адрес на доставка: ' +
+        address + '<br/> Съобщение: ' + message + '<br/> Офис: ' + office + '<br/> Град: ' + city;
 
-        Email.send({
-            SecureToken : "7aef9683-a83b-4269-a214-0025887c76a8",
-            To : 'martysto@abv.bg',
-            From : 'sisko.10@abv.bg',
-            Subject : "Нова поръчка",
-            Body : body
-          }).then(
-          message => alert(message)
-          );
+    body += '<br/><br/><strong>Поръчка:</strong>' + cartBody;
 
-          name.value = '';
-          phone.value = '';
-          address = '';
-          office = '';
-          city = '';
-          })
+    Email.send({
+        SecureToken : "7aef9683-a83b-4269-a214-0025887c76a8",
+        To : 'sisko.10@abv.bg',
+        From : 'sisko.10@abv.bg',
+        Subject : "Нова поръчка",
+        Body : body
+      }).then(
+      message => alert(message)
+      );
 
+    // Clear the input fields
+    document.getElementById('name').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('address').value = '';
+    document.getElementById('message').value = '';
+    document.getElementById('office').value = '';
+    document.getElementById('city').value = '';
+
+    // Clear the cart
+    listCart = [];
+    updateCartCookie();
+    addCartToHTML();
+
+    alert('Поръчката ви е приета');
 });

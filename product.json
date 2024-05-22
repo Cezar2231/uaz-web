@@ -1,28 +1,28 @@
 [
   {
       "id": 1,
-      "name": "Слушалки Plantronics Audio 628 USB",
+      "name": "Микровълнова Зенгер",
       "image": "images/el.jpg",
       "price": 60,
       "category": "Microwaves"
   },
   {
     "id": 2,
-    "name": "Слушалки Plantronics Audio 628 USB",
+    "name": "Микровълнова Филипс",
     "image": "images/el.jpg",
     "price": 60,
     "category": "Microwaves"
   },
   {
       "id": 3,
-      "name": "Слушалки Plantronics Audio 628 USB",
+      "name": "Микровълнова Сони",
       "image": "images/el.jpg",
       "price": 60,
       "category": "Microwaves"
   },
   {
     "id": 4,
-    "name": "Слушалки Plantronics Audio 628 USB",
+    "name": "Еар Фрайър Филипс",
     "image": "images/el.jpg",
     "price": 60,
     "category": "Air Fryers"
@@ -30,56 +30,56 @@
   
   {
       "id": 5,
-      "name": "Слушалки Plantronics Audio 628 USB",
+      "name": "Еар Фрайър Канис",
       "image": "images/el.jpg",
       "price": 60,
       "category": "Air Fryers"
   },
   {
     "id": 6,
-    "name": "Слушалки Plantronics Audio 628 USB",
+    "name": "Еар Фрайър Горенге",
     "image": "images/el.jpg",
     "price": 60,
     "category": "Air Fryers"
   },
   {
     "id": 7,
-    "name": "Слушалки Plantronics Audio 628 USB",
+    "name": "Еар Фрайър Силвър Крест",
     "image": "images/el.jpg",
     "price": 60,
     "category": "Air Fryers"
   },
   {
     "id": 8,
-    "name": "Слушалки Plantronics Audio 628 USB",
+    "name": "Еар Фрайър Фелипе",
     "image": "images/el.jpg",
     "price": 60,
     "category": "Air Fryers"
   },
   {
     "id": 9,
-    "name": "Слушалки Plantronics Audio 628 USB",
+    "name": "Еар Фрайър Селвис",
     "image": "images/el.jpg",
     "price": 60,
     "category": "Air Fryers"
   },
   {
     "id": 10,
-    "name": "Top offer 1",
+    "name": "Топ оферта 1",
     "image": "images/el.jpg",
     "price": 60,
     "category": "Top Offer"
   },
   {
     "id": 11,
-    "name": "Top offer 2",
+    "name": "Топ оферта 2",
     "image": "images/el.jpg",
     "price": 60,
     "category": "Top Offer"
   },
   {
     "id": 12,
-    "name": "Top offer 3",
+    "name": "Топ оферта 3",
     "image": "images/el.jpg",
     "price": 60,
     "category": "Top Offer"

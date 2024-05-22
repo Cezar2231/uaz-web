@@ -42,7 +42,7 @@ function addDataToHTML() {
             newProduct.classList.add('item');
             newProduct.innerHTML = 
             `<img src="${product.image}" alt="">
-            <h2>${product.name}</h2>
+            <h2 class="mt-2">${product.name}</h2>
             <hr>
             <div class="price">${product.price} лв.</div>
             <button class="addCart" onclick="addCart(${product.id})">Добави в количката</button>`;
