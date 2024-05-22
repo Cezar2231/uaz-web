@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         Email.send({
             SecureToken : "7aef9683-a83b-4269-a214-0025887c76a8",
-            To : 'marty100@abv.bg',
+            To : 'martysto@abv.bg',
             From : 'sisko.10@abv.bg',
             Subject : "Нова поръчка",
             Body : body
