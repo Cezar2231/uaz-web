@@ -31,7 +31,15 @@ body {
 	margin: 10px auto;
 	padding: 0 10px 0 10px;
 	text-align: center;
+}
 
+/* to fix problem with stickiness */
+.container-100{
+	display: flex;
+	margin: 10px auto;
+	padding: 0 10px 0 10px;
+	text-align: center;
+	width: 100%;
 }
 
 /* reset links */
@@ -58,21 +66,26 @@ ul{
 
 /* Header */
 
+
+
 header {
 	background: linear-gradient(90deg, rgba(187,254,185,1) 0%, rgba(255,255,255,1) 40%, rgba(250,255,248,1) 60%, rgba(178,255,147,1) 100%);
 	box-shadow: 0px 2px 25px rgba(213, 237, 206, 0.6);
 	display: flex;
+	position: -webkit-sticky; /* For Safari */
 	position: sticky;
-  top: 0;
+	top: 0;
 	width: 100%;
 	z-index: 3;
+	margin: 0;
+	padding: 0; 
 }
 
-header>div {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+header > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .middle-container {
