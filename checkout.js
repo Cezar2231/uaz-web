@@ -1,4 +1,5 @@
 let listCart = [];
+let cartBody = '';
 
 function checkCart() {
     var cookieValue = document.cookie
@@ -29,6 +30,7 @@ function addCartToHTML() {
     let totalQuantity = 0;
     let totalPrice = 0;
 
+
     // if has product in Cart
     if (listCart) {
         listCart.forEach((product, index) => {
@@ -49,6 +51,7 @@ function addCartToHTML() {
                 listCartHTML.appendChild(newCart);
                 totalQuantity = totalQuantity + product.quantity;
                 totalPrice = totalPrice + (product.price * product.quantity);
+                cartBody += '<br/><strong>Product:</strong> ' + product.name + '<br/> <strong>Price:</strong> ' + product.price + ' лв.' + '<br/> <strong>Quantity:</strong> ' + product.quantity;
             }
         });
     }
@@ -67,3 +70,31 @@ function addCartToHTML() {
 
 checkCart();
 addCartToHTML();
+
+document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.querySelector('.buttonCheckout');
+    btn.addEventListener('click', function(e){
+        e.preventDefault();
+        
+        var name = document.getElementById('name').value;
+        var phone = document.getElementById('phone').value;
+        var address = document.getElementById('address').value;
+        var country = document.getElementById('country').value;
+        var city = document.getElementById('city').value;
+        
+        var body = '<strong>Contact Information:</strong><br/> Name: ' + name + '<br/> Phone: ' + phone + '<br/> Address: ' + address + '<br/> Country: ' + country + '<br/> City: ' + city;
+
+
+        body += '<br/><br/><strong>Cart Information:</strong>' + cartBody;
+
+        Email.send({
+            SecureToken : "7aef9683-a83b-4269-a214-0025887c76a8",
+            To : 'sisko.10@abv.bg',
+            From : 'sisko.10@abv.bg',
+            Subject : "This is the subject",
+            Body : body
+          }).then(
+          message => alert(message)
+          );
+          })
+});
