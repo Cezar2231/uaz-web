@@ -54,7 +54,8 @@
     "name": "Еар Фрайър Фелипе",
     "image": "images/el.jpg",
     "price": 60,
-    "category": "Air Fryers"
+    "category": "Air Fryers",
+    "description": "Много добре работещ..."
   },
   {
     "id": 9,

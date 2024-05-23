@@ -41,54 +41,58 @@
         <div class="right">
             <h1>Поръчай</h1>
 
-            <div class="form">
-                <div class="group text-start">
-                    <label for="name">Име / Фамилия <span class="text-danger">*</span></label>
-                    <input type="text" name="name" id="name" required>
+            <form id="order-form">
+                <div class="form">
+                    <div class="group text-start">
+                        <label for="name">Име / Фамилия <span class="text-danger">*</span></label>
+                        <input type="text" name="name" id="name" required>
+                    </div>
+            
+                    <div class="group text-start">
+                        <label for="phone">Телефон <span class="text-danger">*</span></label>
+                        <input type="text" name="phone" id="phone" required>
+                    </div>
+            
+                    <div class="group text-start">
+                        <label for="address">Адрес на доставка <span class="text-danger">*</span></label>
+                        <input type="text" name="address" id="address" required>
+                    </div>
+            
+                    <div class="group text-start">
+                        <label for="message">Допълнително съобщение</label>
+                        <input type="text" name="message" id="message">
+                    </div>
+            
+                    <div class="group">
+                        <label for="office">Доставка до <span class="text-danger">*</span></label>
+                        <select name="country" id="office" required>
+                            <option value="" disabled selected hidden>Изберете опция</option>
+                            <option value="econt">Еконт</option>
+                            <option value="speedy">Спииди</option>
+                            <option value="address">Личен адрес</option>
+                        </select>
+                    </div>
+            
+                    <div class="group">
+                        <label for="city">Град <span class="text-danger">*</span></label>
+                        <input type="text" name="city" id="city" required>
+                    </div>
                 </div>
-    
-                <div class="group text-start">
-                    <label for="phone">Телефон <span class="text-danger">*</span></label>
-                    <input type="text" name="phone" id="phone" required>
+            
+                <div class="return">
+                    <div class="row">
+                        <div>Общо количество</div>
+                        <div class="totalQuantity"></div>
+                    </div>
+                    <div class="row">
+                        <div>Крайна цена</div>
+                        <div class="totalPrice"></div>
+                    </div>
                 </div>
-    
-                <div class="group text-start">
-                    <label for="address">Адрес на доставка <span class="text-danger">*</span></label>
-                    <input type="text" name="address" id="address" required>
-                </div>
-
-                <div class="group text-start">
-                    <label for="message">Допълнително съобщение</label>
-                    <input type="text" name="message" id="message">
-                </div>
-    
-                <div class="group">
-                    <label for="country">Доставка до <span class="text-danger">*</span></label>
-                    <select name="country" id="office">
-                        <option value="econt">Еконт</option>
-                        <option value="speedy">Спииди</option>
-                        <option value="address">Личен адрес</option>
-                    </select>
-                </div>
-    
-                <div class="group">
-                    <label for="city">Град <span class="text-danger">*</span></label>
-                    <input type="text" name="city" id="city" required>
-                </div>
-
-            </div>
-            <div class="return">
-                <div class="row">
-                    <div>Общо количество</div>
-                    <div class="totalQuantity"></div>
-                </div>
-                <div class="row">
-                    <div>Крайна цена</div>
-                    <div class="totalPrice"></div>
-                </div>
-            </div>
-            <input class="buttonCheckout" type="button" value="Поръчай">
-            </div>
+                <button class="buttonCheckout" type="submit">Поръчай</button>
+            </form>
+            
+            
     </div>
 </div>
 

@@ -58,7 +58,7 @@ function addCartToHTML() {
     totalQuantityHTML.innerText = totalQuantity;
     totalPriceHTML.innerText = totalPrice + ' лв.';
 
-    // Add event listeners to remove buttons
+    // Event listeners to remove buttons
     document.querySelectorAll('.removeBtn').forEach(button => {
         button.addEventListener('click', function () {
             let index = this.getAttribute('data-index');
@@ -70,44 +70,62 @@ function addCartToHTML() {
 checkCart();
 addCartToHTML();
 
-let btn = document.querySelector('.buttonCheckout');
-btn.addEventListener('click', function (e) {
-    e.preventDefault();
+document.getElementById('order-form').addEventListener('submit', function (event) {
+    event.preventDefault(); 
 
-    let name = document.getElementById('name').value;
-    let phone = document.getElementById('phone').value;
-    let address = document.getElementById('address').value;
-    let message = document.getElementById('message').value;
-    let office = document.getElementById('office').value;
-    let city = document.getElementById('city').value;
+    // Get all required fields
+    let requiredFields = document.querySelectorAll('#order-form [required]');
+    let allValid = true;
 
-    let body = '<strong>Contact Information:</strong><br/> Имена: ' + name + '<br/> Телефон: ' + phone + '<br/> Адрес на доставка: ' +
-        address + '<br/> Съобщение: ' + message + '<br/> Офис: ' + office + '<br/> Град: ' + city;
+    // Check if all required fields are filled out
+    requiredFields.forEach(field => {
+        if (!field.value) {
+            allValid = false;
+            field.classList.add('error');  
+        } else {
+            field.classList.remove('error'); 
+        }
+    });
 
-    body += '<br/><br/><strong>Поръчка:</strong>' + cartBody;
+    // If all fields are valid, proceed with the form submission
+    if (allValid) {
+        let name = document.getElementById('name').value;
+        let phone = document.getElementById('phone').value;
+        let address = document.getElementById('address').value;
+        let message = document.getElementById('message').value;
+        let office = document.getElementById('office').value;
+        let city = document.getElementById('city').value;
 
-    Email.send({
-        SecureToken : "7aef9683-a83b-4269-a214-0025887c76a8",
-        To : 'sisko.10@abv.bg',
-        From : 'sisko.10@abv.bg',
-        Subject : "Нова поръчка",
-        Body : body
-      }).then(
-      message => alert(message)
-      );
+        let body = '<strong>Contact Information:</strong><br/> Имена: ' + name + '<br/> Телефон: ' + phone + '<br/> Адрес на доставка: ' +
+            address + '<br/> Съобщение: ' + message + '<br/> Офис: ' + office + '<br/> Град: ' + city;
 
-    // Clear the input fields
-    document.getElementById('name').value = '';
-    document.getElementById('phone').value = '';
-    document.getElementById('address').value = '';
-    document.getElementById('message').value = '';
-    document.getElementById('office').value = '';
-    document.getElementById('city').value = '';
+        body += '<br/><br/><strong>Поръчка:</strong>' + cartBody;
 
-    // Clear the cart
-    listCart = [];
-    updateCartCookie();
-    addCartToHTML();
+        Email.send({
+            SecureToken : "7aef9683-a83b-4269-a214-0025887c76a8",
+            To : 'sisko.10@abv.bg',
+            From : 'sisko.10@abv.bg',
+            Subject : "Нова поръчка",
+            Body : body
+        }).then(
+            message => alert(message)
+        );
 
-    alert('Поръчката ви е приета');
+        // Clear the input fields
+        document.getElementById('name').value = '';
+        document.getElementById('phone').value = '';
+        document.getElementById('address').value = '';
+        document.getElementById('message').value = '';
+        document.getElementById('office').value = '';
+        document.getElementById('city').value = '';
+
+        // Clear the cart
+        listCart = [];
+        updateCartCookie();
+        addCartToHTML();
+
+        alert('Поръчката ви е приета');
+    } else {
+        alert('Моля, попълнете всички задължителни полета.');
+    }
 });

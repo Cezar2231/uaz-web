@@ -198,13 +198,13 @@ header > div {
 
 .listProduct {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid columns */
-	gap: 1rem; /* Space between items */
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+	gap: 1rem; 
 	margin-top: 2rem;
-	justify-content: center; /* Center the grid container */
-	max-width: 1200px; /* Set a max-width to create space on the sides */
-	margin-left: auto; /* Center the grid container horizontally */
-	margin-right: auto; /* Center the grid container horizontally */
+	justify-content: center; 
+	max-width: 1200px; 
+	margin-left: auto; 
+	margin-right: auto; 
 }
 
 .listProduct .item{
@@ -374,10 +374,19 @@ header .totalQuantity{
 	grid-column-end: 3;
 }
 
-.checkoutLayout .form input, 
-.checkoutLayout .form select{
+.checkoutLayout .form input{ 
 	width: 100%;
 	padding: 10px 20px;
+	box-sizing: border-box;
+	border-radius: 20px;
+	margin-top: 10px;
+	border:none;
+	background-color: #6a6fc9;
+	color: #fff;
+}
+.checkoutLayout .form select{
+	width: 100%;
+	padding: 11.6px 20px;
 	box-sizing: border-box;
 	border-radius: 20px;
 	margin-top: 10px;
@@ -558,4 +567,68 @@ footer{
 @media only screen and (max-width: 1100px){
 	.checkoutLayout{display: block;}
 	.container{ max-width: 720px;}
+}
+
+
+/* Modal styles */
+.product-modal {
+	display: none; 
+	position: fixed; 
+	z-index: 1; 
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%;  
+	background-color: rgba(0,0,0,0.4); 
+	overflow: hidden;
+}
+
+.modal-content {
+	background-color: #fefefe;
+	margin: 10% auto; 
+	padding: 10px;
+	border: 1px solid #888;
+	width: 50%; 
+	max-width: 450px; 
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modal-content.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.modal-content.close:hover,
+.modal-content.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.modal-content img {
+	width: 100%;
+	max-width: 100%; 
+	height: auto; 
+}
+
+.modal-content h2 {
+	font-size: 1.5em; 
+}
+
+.modal-content .price {
+	font-size: 1.2em; 
+}
+
+.modal-content .addCart {
+	font-size: 1em; 
+	padding: 8px 16px; 
+	background-color: #353432;
+	color: #eee;
+	border-radius: 10px;
+}
+
+input.error, select.error {
+	border: 2px solid red;
 }
