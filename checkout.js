@@ -1,17 +1,24 @@
+"use strict";
+
 let listCart = [];
 let cartBody = '';
 
 function checkCart() {
-    var cookieValue = document.cookie
-        .split('; ')
-        .find(row => row.startsWith('listCart='));
-    if (cookieValue) {
-        listCart = JSON.parse(cookieValue.split('=')[1]);
+    try {
+        var cookieValue = document.cookie
+            .split('; ')
+            .find(row => row.startsWith('listCart='));
+        if (cookieValue) {
+            listCart = JSON.parse(cookieValue.split('=')[1]);
+        }
+    } catch (error) {
+        console.error('Error parsing cookie:', error);
+        listCart = [];
     }
 }
 
 function updateCartCookie() {
-    document.cookie = `listCart=${JSON.stringify(listCart)}; path=/`;
+    document.cookie = `listCart=${JSON.stringify(listCart)}; path=/; SameSite=Lax; Secure`;
 }
 
 function removeFromCart(index) {
@@ -23,48 +30,50 @@ function removeFromCart(index) {
 function addCartToHTML() {
     // clear data default
     let listCartHTML = document.querySelector('.returnCart .list');
-    listCartHTML.innerHTML = '';
+    if (listCartHTML) {
+        listCartHTML.innerHTML = '';
 
-    let totalQuantityHTML = document.querySelector('.totalQuantity');
-    let totalPriceHTML = document.querySelector('.totalPrice');
-    let totalQuantity = 0;
-    let totalPrice = 0;
+        let totalQuantityHTML = document.querySelector('.totalQuantity');
+        let totalPriceHTML = document.querySelector('.totalPrice');
+        let totalQuantity = 0;
+        let totalPrice = 0;
 
-    // if has product in Cart
-    if (listCart) {
-        listCart.forEach((product, index) => {
-            if (product) {
-                let newCart = document.createElement('div');
-                newCart.classList.add('item');
-                newCart.innerHTML =
-                    `<img src="${product.image}">
-                    <div class="info-container">
-                        <div class="info py-3 ps-3">
-                            <div class="name ms-3">${product.name}</div>
-                            <div class="price">${product.price} лв.</div>
+        // if has product in Cart
+        if (listCart.length > 0) {
+            listCart.forEach((product, index) => {
+                if (product) {
+                    let newCart = document.createElement('div');
+                    newCart.classList.add('item');
+                    newCart.innerHTML =
+                        `<img src="${product.image}">
+                        <div class="info-container">
+                            <div class="info py-3 ps-3">
+                                <div class="name ms-3">${product.name}</div>
+                                <div class="price">${product.price} лв.</div>
+                            </div>
+                            <button class="removeBtn" data-index="${index}">x</button>
                         </div>
-                        <button class="removeBtn" data-index="${index}">x</button>
-                    </div>
-                    <div class="quantity fs-5">${product.quantity}</div>
-                    <div class="returnPrice">${product.price * product.quantity} лв.</div>`;
-                listCartHTML.appendChild(newCart);
-                totalQuantity += product.quantity;
-                totalPrice += (product.price * product.quantity);
-                cartBody += '<br/><strong>Product:</strong> ' + product.name + '<br/> <strong>Price:</strong> ' + product.price + ' лв.' + '<br/> <strong>Quantity:</strong> ' + product.quantity;
-            }
+                        <div class="quantity fs-5">${product.quantity}</div>
+                        <div class="returnPrice">${product.price * product.quantity} лв.</div>`;
+                    listCartHTML.appendChild(newCart);
+                    totalQuantity += product.quantity;
+                    totalPrice += (product.price * product.quantity);
+                    cartBody += '<br/><strong>Product:</strong> ' + product.name + '<br/> <strong>Price:</strong> ' + product.price + ' лв.' + '<br/> <strong>Quantity:</strong> ' + product.quantity;
+                }
+            });
+        }
+
+        if (totalQuantityHTML) totalQuantityHTML.innerText = totalQuantity;
+        if (totalPriceHTML) totalPriceHTML.innerText = totalPrice + ' лв.';
+
+        // Event listeners to remove buttons
+        document.querySelectorAll('.removeBtn').forEach(button => {
+            button.addEventListener('click', function () {
+                let index = this.getAttribute('data-index');
+                removeFromCart(index);
+            });
         });
     }
-
-    totalQuantityHTML.innerText = totalQuantity;
-    totalPriceHTML.innerText = totalPrice + ' лв.';
-
-    // Event listeners to remove buttons
-    document.querySelectorAll('.removeBtn').forEach(button => {
-        button.addEventListener('click', function () {
-            let index = this.getAttribute('data-index');
-            removeFromCart(index);
-        });
-    });
 }
 
 checkCart();
