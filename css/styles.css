@@ -569,6 +569,7 @@ input.error, select.error {
 	max-width: 100%;
 	object-fit:fill;
 }
+
 .line {
 	padding-left : 8vw;
 	background-color:rgba(223, 6, 6, 0.558);
@@ -576,6 +577,17 @@ input.error, select.error {
 	margin-left: 3rem;
 	width:10%;
 }
+
+.line-2{
+	height: 1px;
+	margin: 2px;
+	width: 80%;
+}
+
+#modal-description{
+	margin-bottom: 8px;
+}
+
 .hidden{display: none;}
 
 .btn{
