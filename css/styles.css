@@ -489,6 +489,7 @@ header .totalQuantity{
 	width: 100%;
 	max-width: 100%; 
 	height: auto; 
+	margin-bottom: 10px;
 }
 
 .modal-content h2 {
@@ -585,7 +586,7 @@ input.error, select.error {
 }
 
 #modal-description{
-	margin-bottom: 8px;
+	margin-bottom: 4px;
 }
 
 .hidden{display: none;}
