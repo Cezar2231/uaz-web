@@ -1,24 +1,44 @@
-"use strict";
-
 let listCart = [];
 let cartBody = '';
 
+function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+
 function checkCart() {
-    try {
-        var cookieValue = document.cookie
-            .split('; ')
-            .find(row => row.startsWith('listCart='));
-        if (cookieValue) {
-            listCart = JSON.parse(cookieValue.split('=')[1]);
+    const cookieValue = getCookie('listCart');
+    if (cookieValue) {
+        try {
+            listCart = JSON.parse(cookieValue);
+        } catch (error) {
+            console.error('Error parsing cookie:', error);
+            listCart = [];
         }
-    } catch (error) {
-        console.error('Error parsing cookie:', error);
+    } else {
         listCart = [];
     }
 }
 
 function updateCartCookie() {
-    document.cookie = `listCart=${JSON.stringify(listCart)}; path=/; SameSite=Lax; Secure`;
+    setCookie('listCart', JSON.stringify(listCart), 7);  // Cookie expires in 7 days
 }
 
 function removeFromCart(index) {
@@ -58,7 +78,6 @@ function addCartToHTML() {
                     listCartHTML.appendChild(newCart);
                     totalQuantity += product.quantity;
                     totalPrice += (product.price * product.quantity);
-                    cartBody += '<br/><strong>Product:</strong> ' + product.name + '<br/> <strong>Price:</strong> ' + product.price + ' лв.' + '<br/> <strong>Quantity:</strong> ' + product.quantity;
                 }
             });
         }
