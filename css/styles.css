@@ -448,6 +448,19 @@ header .totalQuantity{
 	cursor: pointer;
 }
 
+.order-modal {
+	display: none; 
+	position: fixed; 
+	z-index: 1; 
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%;  
+	background-color: rgba(0,0,0,0.4); 
+	overflow: hidden;
+}
+
+
 /* Modal styles */
 .product-modal {
 	display: none; 
@@ -531,6 +544,10 @@ input.error, select.error {
 
 .sm-words{
 	font-size: 12px;
+}
+
+.order-pic{
+	border-radius: 10%;
 }
 
 .flex-center {
@@ -617,6 +634,11 @@ input.error, select.error {
 .removeBtn:hover {
 	opacity: 0.8;
 	color:#6a6fc9;
+}
+
+.red-alert{
+	font-size: 1.5rem; 
+	color: #f50b0b;
 }
 
 footer{

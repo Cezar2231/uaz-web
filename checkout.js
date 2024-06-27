@@ -1,3 +1,4 @@
+let alertElement = document.getElementById('alert');
 let listCart = [];
 let cartBody = '';
 
@@ -5,10 +6,17 @@ function checkCart() {
     var cookieValue = document.cookie
         .split('; ')
         .find(row => row.startsWith('listCart='));
+
     if (cookieValue) {
-        listCart = JSON.parse(cookieValue.split('=')[1]);
+        try {
+            listCart = JSON.parse(decodeURIComponent(cookieValue.split('=')[1]));
+        } catch (e) {
+            console.error('Error parsing listCart cookie:', e);
+            listCart = [];
+        }
     }
 }
+
 
 function updateCartCookie() {
     const cookieValue = encodeURIComponent(JSON.stringify(listCart));
@@ -17,6 +25,7 @@ function updateCartCookie() {
 
     document.cookie = `listCart=${cookieValue}; path=/; expires=${expires.toUTCString()}; SameSite=Lax`;
 }
+
 
 function removeFromCart(index) {
     listCart.splice(index, 1);
@@ -34,14 +43,17 @@ function addCartToHTML() {
     let totalQuantity = 0;
     let totalPrice = 0;
 
+    // Reset cartBody
+    cartBody = '';
+
     // if has product in Cart
-    if (listCart) {
+    if (listCart.length > 0) {
         listCart.forEach((product, index) => {
             if (product) {
                 let newCart = document.createElement('div');
                 newCart.classList.add('item');
                 newCart.innerHTML =
-                    `<img src="${product.image}">
+                    `<img class="order-pic" src="${product.image}">
                     <div class="info-container">
                         <div class="info py-3 ps-3">
                             <div class="name ms-3">${product.name}</div>
@@ -73,6 +85,30 @@ function addCartToHTML() {
 
 checkCart();
 addCartToHTML();
+
+function showOrderModal() {
+    let modal = document.getElementById('order-modal');
+    modal.style.display = 'block';
+}
+
+function closeOrderModal() {
+    let modal = document.getElementById('order-modal');
+    modal.style.display = 'none';
+    setTimeout(() => {
+        window.location.href = "index.html";
+    }, 1000); // 1-second delay
+}
+
+// Close the modal when the user clicks on <span> (x)
+document.querySelector('.order-modal .close').addEventListener('click', closeOrderModal);
+
+// Close the modal when the user clicks anywhere outside of the modal
+window.addEventListener('click', function(event) {
+    let modal = document.getElementById('order-modal');
+    if (event.target == modal) {
+        closeOrderModal();
+    }
+});
 
 document.getElementById('order-form').addEventListener('submit', function (event) {
     event.preventDefault(); 
@@ -114,7 +150,7 @@ document.getElementById('order-form').addEventListener('submit', function (event
                 Subject : "Нова поръчка",
                 Body : body
             }).then(
-                message => alert(message)
+                message => console.log(message)
             );
 
             // Clear the input fields
@@ -130,12 +166,12 @@ document.getElementById('order-form').addEventListener('submit', function (event
             updateCartCookie();
             addCartToHTML();
 
-            alert('Поръчката ви е приета');
-            window.location.href = "index.html#thank-you-modal";
+            showOrderModal();
+            alertElement.textContent= '';
         } else {
-            alert('Моля, попълнете всички задължителни полета.');
+           alertElement.textContent= 'Моля, попълнете всички задължителни полета.';
         }
     } else {
-        alert('Моля, добавете продукт в количката преди да направите поръчка.');
+        alertElement.textContent= 'Моля, добавете продукт в количката преди да направите поръчка.';
     }
 });
