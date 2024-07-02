@@ -645,6 +645,11 @@ footer{
 	margin-top: auto;
 }
 
+.flex-space-around {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}
 @media only screen and (max-width: 660px){
 	.remove{ display: none; }
 	.site-heading{ font-size: 1rem; }

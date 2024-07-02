@@ -32,7 +32,7 @@ function removeFromCart(index) {
     updateCartCookie();
     addCartToHTML();
 }
-
+let totalPrice = 0;
 function addCartToHTML() {
     // clear data default
     let listCartHTML = document.querySelector('.returnCart .list');
@@ -41,7 +41,7 @@ function addCartToHTML() {
     let totalQuantityHTML = document.querySelector('.totalQuantity');
     let totalPriceHTML = document.querySelector('.totalPrice');
     let totalQuantity = 0;
-    let totalPrice = 0;
+    
 
     // Reset cartBody
     cartBody = '';
@@ -114,7 +114,7 @@ document.getElementById('order-form').addEventListener('submit', function (event
     event.preventDefault(); 
 
     // Check if the cart is not empty
-    if (listCart.length > 0) {
+    if (listCart.length > 0 && totalPrice > 0) {
         // Get all required fields
         let requiredFields = document.querySelectorAll('#order-form [required]');
         let allValid = true;
